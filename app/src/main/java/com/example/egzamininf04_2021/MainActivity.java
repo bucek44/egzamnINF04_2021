@@ -37,17 +37,16 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!email.getText().toString().contains("@")) {
+                        if (!email.getText().toString().contains("@"))
                             powiadomienie.setText("nie poprawny email");
-                        }
-                        else if (!haslo.getText().toString().equals(powtorzenieHasla.getText().toString())){
+
+                        else if (!haslo.getText().toString().equals(powtorzenieHasla.getText().toString()
+                                ))
                             powiadomienie.setText("hasła się różnią");
-
-                        }
-                        else {
-                            powiadomienie.setText("witaj "+email.getText());
-
-                        }
+                        else if (haslo.getText().toString().equals("")) {
+                            powiadomienie.setText("nie wpisałeś hasla");
+                        } else
+                            powiadomienie.setText("witaj " + email.getText());
 
                     }
                 }
